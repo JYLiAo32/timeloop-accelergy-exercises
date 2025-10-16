@@ -28,9 +28,9 @@ architecture:
                 power_gated_at: null
             required_actions:
               - leak
-              - update
-              - write
               - read
+              - write
+              - update
             enabled: true
           - name: shared_glb[1..1]
             class: smartbuffer_SRAM
@@ -53,9 +53,9 @@ architecture:
                 technology: "45nm"
             required_actions:
               - leak
-              - update
-              - write
               - read
+              - write
+              - update
             enabled: true
           - name: inter_PE_spatial[1..1]
             class: dummy_storage
@@ -94,9 +94,9 @@ architecture:
                 technology: "45nm"
             required_actions:
               - leak
-              - update
-              - write
               - read
+              - write
+              - update
             enabled: true
           - name: weight_reg[1..256]
             class: storage
@@ -118,9 +118,9 @@ architecture:
                 technology: "45nm"
             required_actions:
               - leak
-              - update
-              - write
               - read
+              - write
+              - update
             enabled: true
           - name: input_activation_reg[1..256]
             class: storage
@@ -142,9 +142,9 @@ architecture:
                 technology: "45nm"
             required_actions:
               - leak
-              - update
-              - write
               - read
+              - write
+              - update
             enabled: true
           - name: output_activation_reg[1..256]
             class: storage
@@ -166,9 +166,9 @@ architecture:
                 technology: "45nm"
             required_actions:
               - leak
-              - update
-              - write
               - read
+              - write
+              - update
             enabled: true
           - name: mac[1..256]
             class: intmac
@@ -220,8 +220,8 @@ architecture_constraints:
           - Weights
         type: bypass
         bypass:
-          - Inputs
           - Outputs
+          - Inputs
         target: weight_reg
       - factors: R=1,S=1,M=1,C=1
         type: temporal
@@ -231,8 +231,8 @@ architecture_constraints:
           - Inputs
         type: bypass
         bypass:
-          - Weights
           - Outputs
+          - Weights
         target: input_activation_reg
       - factors: P=1,Q=1,C=1,N=1
         type: temporal
@@ -330,7 +330,7 @@ compound_components:
             attributes:
                 width: adder_width
           - name: intmultiplier
-            class: aladdin_adder
+            class: aladdin_multiplier
             attributes:
                 width_a: multiplier_width
                 width_b: multiplier_width
@@ -647,8 +647,8 @@ compound_components:
             class: intadder
             attributes:
                 n_bits: max(1, ceil(log2(real_depth))) if real_depth >= 1 else 1
-                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 else
-                    1
+                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 
+                    else 1
                 width: max(1, ceil(log2(real_depth))) if real_depth >= 1 else 1
                 global_cycle_seconds: global_cycle_seconds
         actions:

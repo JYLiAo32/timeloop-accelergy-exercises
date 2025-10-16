@@ -36,6 +36,8 @@ architecture:
           - write
           - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: PE_top_level.mac[1..1]
         class: intmac
         attributes:
@@ -54,3 +56,5 @@ architecture:
         required_actions:
           - compute
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0

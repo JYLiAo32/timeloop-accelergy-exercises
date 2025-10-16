@@ -30,9 +30,9 @@ architecture:
                 power_gated_at: null
             required_actions:
               - update
+              - leak
               - read
               - write
-              - leak
             enabled: true
           - name: shared_glb[1..1]
             class: smartbuffer_SRAM
@@ -56,9 +56,9 @@ architecture:
                 power_gated_at: null
             required_actions:
               - update
+              - leak
               - read
               - write
-              - leak
             enabled: true
           - name: inter_PE_column_spatial[1..1]
             class: dummy_storage
@@ -120,9 +120,9 @@ architecture:
                 power_gated_at: null
             required_actions:
               - update
+              - leak
               - read
               - write
-              - leak
             enabled: true
           - name: weights_spad[1..168]
             class: smartbuffer_RF
@@ -146,9 +146,9 @@ architecture:
                 power_gated_at: null
             required_actions:
               - update
+              - leak
               - read
               - write
-              - leak
             enabled: true
           - name: psum_spad[1..168]
             class: smartbuffer_RF
@@ -173,9 +173,9 @@ architecture:
                 power_gated_at: null
             required_actions:
               - update
+              - leak
               - read
               - write
-              - leak
             enabled: true
           - name: mac[1..168]
             class: intmac
@@ -262,8 +262,8 @@ architecture_constraints:
           - Outputs
         type: bypass
         bypass:
-          - Weights
           - Inputs
+          - Weights
         target: psum_spad
       - permutation: NCPQRSM
         factors: N=1,C=1,R=1,S=1,P=1,Q=1
@@ -395,8 +395,8 @@ compound_components:
             class: intadder
             attributes:
                 n_bits: max(1, ceil(log2(real_depth))) if real_depth >= 1 else 1
-                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 else
-                    1
+                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 
+                    else 1
                 global_cycle_seconds: global_cycle_seconds
         actions:
           - name: write
@@ -515,8 +515,8 @@ compound_components:
             class: intadder
             attributes:
                 n_bits: max(1, ceil(log2(real_depth))) if real_depth >= 1 else 1
-                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 else
-                    1
+                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 
+                    else 1
                 global_cycle_seconds: global_cycle_seconds
         actions:
           - name: write

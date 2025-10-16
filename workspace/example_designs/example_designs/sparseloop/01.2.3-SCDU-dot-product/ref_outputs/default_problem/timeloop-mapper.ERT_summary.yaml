@@ -4,19 +4,19 @@ ERT_summary:
       - name: PE_top_level.Buffer[1..1]
         actions:
           - name: read
-            energy: 0.582895
+            energy: 0.712078
           - name: write
-            energy: 0.510895
+            energy: 0.620981
           - name: update
-            energy: 0.510895
+            energy: 0.620981
           - name: metadata_read
-            energy: 0.191076
+            energy: 0.220617
           - name: metadata_write
-            energy: 0.170111
+            energy: 0.194091
           - name: metadata_update
-            energy: 0.170111
+            energy: 0.194091
           - name: leak
-            energy: 0.002083
+            energy: 0.000643295
           - name: decompression_count
             energy: 0.0
           - name: compression_count
@@ -27,25 +27,25 @@ ERT_summary:
           - name: storage.storage.comparator[1..64]
             estimator: Library
           - name: storage.address_generators[1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: storage.address_generators[0]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: metadata_storage.storage.storage[1..32]
             estimator: Library
           - name: metadata_storage.storage.comparator[1..64]
             estimator: Library
           - name: metadata_storage.address_generators[1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: metadata_storage.address_generators[0]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: storage.storage.storage[1..2048]
             estimator: Library
           - name: storage.address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: metadata_storage.storage.storage[1..2048]
             estimator: Library
           - name: metadata_storage.address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: metadata_counters[1]
             estimator: Aladdin_table
           - name: metadata_counters[0]
@@ -53,9 +53,9 @@ ERT_summary:
       - name: PE_top_level.mac[1..1]
         actions:
           - name: compute
-            energy: 0.315
+            energy: 1.13555
           - name: leak
-            energy: 0.0036
+            energy: 0.00784449
         primitive_estimation(s):
           - name: intadder
             estimator: Library

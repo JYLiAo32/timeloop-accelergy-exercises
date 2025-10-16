@@ -5,9 +5,9 @@ ERT_summary:
         actions:
           - name: leak
             energy: 0.0
-          - name: write
-            energy: 512.0
           - name: read
+            energy: 512.0
+          - name: write
             energy: 512.0
           - name: update
             energy: 512.0
@@ -17,13 +17,13 @@ ERT_summary:
       - name: system_top_level.shared_glb[1..1]
         actions:
           - name: write
-            energy: 14.137929
+            energy: 49.7147
           - name: read
-            energy: 18.183829
+            energy: 59.4555
           - name: leak
-            energy: 0.005652
+            energy: 0.0216217
           - name: update
-            energy: 14.137929
+            energy: 49.7147
         primitive_estimation(s):
           - name: storage
             estimator: CactiSRAM
@@ -36,13 +36,13 @@ ERT_summary:
       - name: system_top_level.ifmap_spad[1..168]
         actions:
           - name: write
-            energy: 0.176713
+            energy: 0.43577
           - name: read
-            energy: 0.202442
+            energy: 0.497023
           - name: leak
-            energy: 0.000101
+            energy: 0.00024112
           - name: update
-            energy: 0.176713
+            energy: 0.43577
         primitive_estimation(s):
           - name: storage.storage[1..32]
             estimator: Library
@@ -59,13 +59,13 @@ ERT_summary:
       - name: system_top_level.weights_spad[1..168]
         actions:
           - name: write
-            energy: 1.881657
+            energy: 4.50962
           - name: read
-            energy: 1.976602
+            energy: 4.73566
           - name: leak
-            energy: 0.001592
+            energy: 0.00379186
           - name: update
-            energy: 1.881657
+            energy: 4.50962
         primitive_estimation(s):
           - name: storage.storage[1..32]
             estimator: Library
@@ -82,13 +82,13 @@ ERT_summary:
       - name: system_top_level.psum_spad[1..168]
         actions:
           - name: write
-            energy: 0.2191
+            energy: 0.536681
           - name: read
-            energy: 0.2513
+            energy: 0.613343
           - name: leak
-            energy: 0.000134
+            energy: 0.00031992
           - name: update
-            energy: 0.2191
+            energy: 0.536681
         primitive_estimation(s):
           - name: storage.storage[1..32]
             estimator: Library
@@ -105,9 +105,9 @@ ERT_summary:
       - name: system_top_level.mac[1..168]
         actions:
           - name: compute
-            energy: 0.207692
+            energy: 1.40883
           - name: leak
-            energy: 0.002374
+            energy: 0.00973233
         primitive_estimation(s):
           - name: intadder
             estimator: Library

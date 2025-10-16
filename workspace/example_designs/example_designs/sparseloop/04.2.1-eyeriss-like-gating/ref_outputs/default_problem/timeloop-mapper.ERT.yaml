@@ -3,21 +3,21 @@ ERT:
     tables:
       - name: eyeriss_168_top_level.DRAM[1..1]
         actions:
-          - name: write
-            arguments:
-                global_cycle_seconds: 1e-09
-                action_latency_cycles: 1
-            energy: 512.0
-          - name: read
-            arguments:
-                global_cycle_seconds: 1e-09
-                action_latency_cycles: 1
-            energy: 512.0
           - name: leak
             arguments:
                 global_cycle_seconds: 1e-09
                 action_latency_cycles: 1
             energy: 0.0
+          - name: read
+            arguments:
+                global_cycle_seconds: 1e-09
+                action_latency_cycles: 1
+            energy: 512.0
+          - name: write
+            arguments:
+                global_cycle_seconds: 1e-09
+                action_latency_cycles: 1
+            energy: 512.0
           - name: update
             arguments:
                 global_cycle_seconds: 1e-09
@@ -27,78 +27,78 @@ ERT:
         actions:
           - name: read
             arguments: {}
-            energy: 28.426775
+            energy: 28.3915
           - name: write
             arguments: {}
-            energy: 23.503475
+            energy: 23.4682
           - name: update
             arguments: {}
-            energy: 23.503475
+            energy: 23.4682
           - name: metadata_read
             arguments: {}
-            energy: 0.006562
+            energy: 0.00429576
           - name: metadata_write
             arguments: {}
-            energy: 0.006562
+            energy: 0.00429576
           - name: metadata_update
             arguments: {}
-            energy: 0.006562
+            energy: 0.00429576
           - name: leak
             arguments: {}
-            energy: 0.004781
+            energy: 0.00263585
           - name: decompression_count
             arguments: {}
-            energy: 0.059062
+            energy: 0.0590625
           - name: compression_count
             arguments: {}
-            energy: 0.059062
+            energy: 0.0590625
       - name: eyeriss_168_top_level.ifmap_spad[1..168]
         actions:
           - name: write
             arguments: {}
-            energy: 0.297769
+            energy: 0.359892
           - name: read
             arguments: {}
-            energy: 0.339229
+            energy: 0.412349
           - name: leak
             arguments: {}
-            energy: 0.000735
+            energy: 0.000205416
           - name: update
             arguments: {}
-            energy: 0.297769
+            energy: 0.359892
       - name: eyeriss_168_top_level.weights_spad[1..168]
         actions:
           - name: write
             arguments: {}
-            energy: 3.35314
+            energy: 4.20854
           - name: read
             arguments: {}
-            energy: 3.49714
+            energy: 4.39073
           - name: leak
             arguments: {}
-            energy: 0.003961
+            energy: 0.00356277
           - name: update
             arguments: {}
-            energy: 3.35314
+            energy: 4.20854
       - name: eyeriss_168_top_level.psum_spad[1..168]
         actions:
           - name: write
             arguments: {}
-            energy: 0.47162
+            energy: 0.575572
           - name: read
             arguments: {}
-            energy: 0.538625
+            energy: 0.66035
           - name: leak
             arguments: {}
-            energy: 0.00102
+            energy: 0.000384792
           - name: update
             arguments: {}
-            energy: 0.47162
+            energy: 0.575572
       - name: eyeriss_168_top_level.mac[1..168]
         actions:
           - name: compute
             arguments: {}
-            energy: 0.315
+            energy: 1.13555
           - name: leak
             arguments: {}
-            energy: 0.0036
+            energy: 0.00784449

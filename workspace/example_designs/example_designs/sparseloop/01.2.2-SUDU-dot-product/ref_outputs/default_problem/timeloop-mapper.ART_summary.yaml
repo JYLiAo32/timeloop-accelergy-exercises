@@ -2,14 +2,14 @@ ART_summary:
     version: '0.4'
     table_summary:
       - name: PE_top_level.Buffer[1..1]
-        area: 7605.76
+        area: 13222.3
         primitive_estimations:
           - name: storage[1..512]
             estimator: Library
           - name: comparator[1..64]
             estimator: Library
       - name: PE_top_level.mac[1..1]
-        area: 417.0
+        area: 931.598
         primitive_estimations:
           - name: intadder
             estimator: Library

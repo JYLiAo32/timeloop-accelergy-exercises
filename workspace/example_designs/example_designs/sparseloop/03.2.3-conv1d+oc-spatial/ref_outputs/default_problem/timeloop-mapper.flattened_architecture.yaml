@@ -29,11 +29,13 @@ architecture:
             n_rdwr_ports: 1
             metadata_counter_width: 0
         required_actions:
-          - update
           - leak
           - read
           - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.inter_PE_spatial[1..1]
         class: dummy_storage
         attributes:
@@ -57,6 +59,8 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.Buffer[1..4]
         class: storage
         subclass: regfile_metadata
@@ -85,11 +89,13 @@ architecture:
             n_instances: 1
             metadata_counter_width: 0
         required_actions:
-          - update
           - leak
           - read
           - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.mac[1..4]
         class: intmac
         attributes:
@@ -108,3 +114,5 @@ architecture:
         required_actions:
           - compute
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0

@@ -5,21 +5,21 @@ ERT:
         actions:
           - name: write
             arguments: {}
-            energy: 1.88608
+            energy: 2.38635
           - name: read
             arguments: {}
-            energy: 1.95808
+            energy: 2.47744
           - name: leak
             arguments: {}
-            energy: 0.001606
+            energy: 0.00203248
           - name: update
             arguments: {}
-            energy: 1.88608
+            energy: 2.38635
       - name: PE_top_level.mac[1..1]
         actions:
           - name: compute
             arguments: {}
-            energy: 0.315
+            energy: 1.13555
           - name: leak
             arguments: {}
-            energy: 0.0036
+            energy: 0.00784449

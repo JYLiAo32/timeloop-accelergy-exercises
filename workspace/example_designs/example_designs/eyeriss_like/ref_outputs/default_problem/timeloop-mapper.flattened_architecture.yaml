@@ -25,10 +25,12 @@ architecture:
             n_instances: 1
         required_actions:
           - leak
-          - write
           - read
+          - write
           - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.shared_glb[1..1]
         class: smartbuffer_SRAM
         attributes:
@@ -47,7 +49,7 @@ architecture:
             meshX: 1
             meshY: 1
             power_gated_at: null
-            technology: "32nm"
+            technology: "65nm"
             version: '0.4'
             global_cycle_seconds: 1e-09
             action_latency_cycles: 1
@@ -56,10 +58,12 @@ architecture:
             n_rw_ports: 1
         required_actions:
           - leak
-          - write
           - read
+          - write
           - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.inter_PE_column_spatial[1..1]
         class: dummy_storage
         attributes:
@@ -83,6 +87,8 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.inter_PE_spatial[1..14]
         class: dummy_storage
         attributes:
@@ -106,6 +112,8 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.ifmap_spad[1..168]
         class: smartbuffer_RF
         attributes:
@@ -124,7 +132,7 @@ architecture:
             meshX: 14
             meshY: 12
             power_gated_at: null
-            technology: "32nm"
+            technology: "65nm"
             version: '0.4'
             global_cycle_seconds: 1e-09
             action_latency_cycles: 1
@@ -141,10 +149,12 @@ architecture:
             n_rdwr_ports: 1
         required_actions:
           - leak
-          - write
           - read
+          - write
           - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.weights_spad[1..168]
         class: smartbuffer_RF
         attributes:
@@ -163,7 +173,7 @@ architecture:
             meshX: 14
             meshY: 12
             power_gated_at: null
-            technology: "32nm"
+            technology: "65nm"
             version: '0.4'
             global_cycle_seconds: 1e-09
             action_latency_cycles: 1
@@ -180,10 +190,12 @@ architecture:
             n_rdwr_ports: 1
         required_actions:
           - leak
-          - write
           - read
+          - write
           - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.psum_spad[1..168]
         class: smartbuffer_RF
         attributes:
@@ -203,7 +215,7 @@ architecture:
             meshX: 14
             meshY: 12
             power_gated_at: null
-            technology: "32nm"
+            technology: "65nm"
             version: '0.4'
             global_cycle_seconds: 1e-09
             action_latency_cycles: 1
@@ -220,10 +232,12 @@ architecture:
             n_rdwr_ports: 1
         required_actions:
           - leak
-          - write
           - read
+          - write
           - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.mac[1..168]
         class: intmac
         attributes:
@@ -233,7 +247,7 @@ architecture:
             meshX: 14
             meshY: 12
             power_gated_at: null
-            technology: "32nm"
+            technology: "65nm"
             version: '0.4'
             global_cycle_seconds: 1e-09
             action_latency_cycles: 1
@@ -242,3 +256,5 @@ architecture:
         required_actions:
           - compute
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0

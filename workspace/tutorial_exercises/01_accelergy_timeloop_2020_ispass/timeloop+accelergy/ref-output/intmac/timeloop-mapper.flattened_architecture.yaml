@@ -26,11 +26,13 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         required_actions:
-          - leak
-          - update
-          - write
           - read
+          - leak
+          - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.shared_glb[1..1]
         class: smartbuffer_SRAM
         attributes:
@@ -67,11 +69,13 @@ architecture:
             static_energy_scale: 1.0
             n_rdwr_ports: 1
         required_actions:
-          - leak
-          - update
-          - write
           - read
+          - leak
+          - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.inter_PE_column_spatial[1..1]
         class: dummy_storage
         attributes:
@@ -97,6 +101,8 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.inter_PE_spatial[1..14]
         class: dummy_storage
         attributes:
@@ -122,6 +128,8 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.ifmap_spad[1..168]
         class: smartbuffer_RF
         attributes:
@@ -158,11 +166,13 @@ architecture:
             static_energy_scale: 0.09375
             n_rdwr_ports: 1
         required_actions:
-          - leak
-          - update
-          - write
           - read
+          - leak
+          - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.weights_spad[1..168]
         class: smartbuffer_RF
         attributes:
@@ -199,11 +209,13 @@ architecture:
             static_energy_scale: 0.5
             n_rdwr_ports: 1
         required_actions:
-          - leak
-          - update
-          - write
           - read
+          - leak
+          - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.psum_spad[1..168]
         class: smartbuffer_RF
         attributes:
@@ -241,11 +253,13 @@ architecture:
             static_energy_scale: 0.125
             n_rdwr_ports: 1
         required_actions:
-          - leak
-          - update
-          - write
           - read
+          - leak
+          - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: system_top_level.mac[1..168]
         class: intmac
         attributes:
@@ -267,3 +281,5 @@ architecture:
         required_actions:
           - compute
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0

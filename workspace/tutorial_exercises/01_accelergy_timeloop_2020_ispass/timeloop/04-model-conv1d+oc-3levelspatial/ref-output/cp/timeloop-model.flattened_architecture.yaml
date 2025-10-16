@@ -24,10 +24,42 @@ architecture:
             n_instances: 1
         required_actions:
           - update
+          - leak
           - read
           - write
-          - leak
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
+      - name: System_top_level.GlobalBuffer[1..1]
+        class: SRAM
+        attributes:
+            depth: 32768
+            width: 64
+            datawidth: 8
+            has_power_gating: false
+            n_banks: 2
+            cluster_size: 1
+            reduction_supported: true
+            multiple_buffering: 1
+            min_utilization: 0
+            allow_overbooking: false
+            meshX: 1
+            meshY: 1
+            technology: "40nm"
+            global_cycle_seconds: 1e-09
+            power_gated_at: null
+            version: '0.4'
+            action_latency_cycles: 1
+            cycle_seconds: 1e-09
+            n_instances: 1
+        required_actions:
+          - update
+          - leak
+          - read
+          - write
+        enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.inter_PE_spatial[1..1]
         class: dummy_storage
         attributes:
@@ -51,34 +83,8 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         enabled: true
-      - name: System_top_level.GlobalBuffer[1..16]
-        class: SRAM
-        attributes:
-            depth: 32768
-            width: 64
-            datawidth: 8
-            has_power_gating: false
-            n_banks: 2
-            cluster_size: 1
-            reduction_supported: true
-            multiple_buffering: 1
-            min_utilization: 0
-            allow_overbooking: false
-            meshX: 16
-            meshY: 1
-            technology: "40nm"
-            global_cycle_seconds: 1e-09
-            power_gated_at: null
-            version: '0.4'
-            action_latency_cycles: 1
-            cycle_seconds: 1e-09
-            n_instances: 1
-        required_actions:
-          - update
-          - read
-          - write
-          - leak
-        enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.RegisterFile[1..16]
         class: regfile
         attributes:
@@ -103,10 +109,12 @@ architecture:
             n_instances: 1
         required_actions:
           - update
+          - leak
           - read
           - write
-          - leak
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.MACC[1..16]
         class: intmac
         attributes:
@@ -124,3 +132,5 @@ architecture:
         required_actions:
           - compute
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0

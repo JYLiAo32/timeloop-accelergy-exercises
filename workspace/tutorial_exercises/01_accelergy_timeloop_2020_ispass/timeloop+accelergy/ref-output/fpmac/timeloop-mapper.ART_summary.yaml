@@ -6,19 +6,19 @@ ART_summary:
         primitive_estimations: CactiDRAM
       - name: system_top_level.inter_PE_column_spatial[1..1]
         area: 1.0
-        primitive_estimations: dummy_table
+        primitive_estimations: dummy
       - name: system_top_level.inter_PE_spatial[1..14]
         area: 1.0
-        primitive_estimations: dummy_table
+        primitive_estimations: dummy
       - name: system_top_level.shared_glb[1..1]
-        area: 429751.88776
+        area: 429752.0
         primitive_estimations:
           - name: storage
             estimator: CactiSRAM
           - name: address_generators[0..1]
             estimator: Neurosim Plug-In
       - name: system_top_level.ifmap_spad[1..168]
-        area: 599.03613
+        area: 5519.77
         primitive_estimations:
           - name: storage.storage[1..2048]
             estimator: Library
@@ -27,7 +27,7 @@ ART_summary:
           - name: address_generators[0..1]
             estimator: Neurosim Plug-In
       - name: system_top_level.weights_spad[1..168]
-        area: 50466.19872
+        area: 87664.8
         primitive_estimations:
           - name: storage.storage[1..6144]
             estimator: Library
@@ -36,7 +36,7 @@ ART_summary:
           - name: address_generators[0..1]
             estimator: Neurosim Plug-In
       - name: system_top_level.psum_spad[1..168]
-        area: 1061.07484
+        area: 7344.18
         primitive_estimations:
           - name: storage.storage[1..2048]
             estimator: Library
@@ -45,7 +45,7 @@ ART_summary:
           - name: address_generators[0..1]
             estimator: Neurosim Plug-In
       - name: system_top_level.mac[1..168]
-        area: 4120.0
+        area: 8720.0
         primitive_estimations:
           - name: fpadder
             estimator: Aladdin_table

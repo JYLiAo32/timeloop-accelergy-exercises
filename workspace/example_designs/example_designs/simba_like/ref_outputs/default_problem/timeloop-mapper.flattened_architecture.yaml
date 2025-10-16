@@ -24,11 +24,13 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         required_actions:
-          - read
-          - update
           - leak
+          - read
           - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.GlobalBuffer[1..1]
         class: smartbuffer_SRAM
         attributes:
@@ -54,11 +56,13 @@ architecture:
             n_instances: 1
             n_rw_ports: 1
         required_actions:
-          - read
-          - update
           - leak
+          - read
           - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.inter_PE_spatial[1..1]
         class: dummy_storage
         attributes:
@@ -82,6 +86,8 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.PEInputBuffer[1..16]
         class: storage
         subclass: smartbuffer_RF
@@ -115,11 +121,13 @@ architecture:
             static_energy_scale: 1.0
             n_rdwr_ports: 1
         required_actions:
-          - read
-          - update
           - leak
+          - read
           - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.inter_distributed_buffers_spatial[1..16]
         class: dummy_storage
         attributes:
@@ -143,6 +151,8 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.PEWeightBuffer[1..64]
         class: storage
         subclass: smartbuffer_RF
@@ -176,11 +186,13 @@ architecture:
             static_energy_scale: 1.0
             n_rdwr_ports: 1
         required_actions:
-          - read
-          - update
           - leak
+          - read
           - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.PEAccuBuffer[1..64]
         class: storage
         subclass: smartbuffer_RF
@@ -214,11 +226,13 @@ architecture:
             static_energy_scale: 0.75
             n_rdwr_ports: 1
         required_actions:
-          - read
-          - update
           - leak
+          - read
           - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.inter_reg_mac_spatial[1..64]
         class: dummy_storage
         attributes:
@@ -242,6 +256,8 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.PEWeightRegs[1..256]
         class: storage
         subclass: smartbuffer_RF
@@ -276,11 +292,13 @@ architecture:
             static_energy_scale: 0.015625
             n_rdwr_ports: 1
         required_actions:
-          - read
-          - update
           - leak
+          - read
           - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.mac[1..256]
         class: intmac
         attributes:
@@ -300,3 +318,5 @@ architecture:
         required_actions:
           - compute
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0

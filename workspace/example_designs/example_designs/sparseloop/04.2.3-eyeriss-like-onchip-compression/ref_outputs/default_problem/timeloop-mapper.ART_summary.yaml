@@ -6,52 +6,52 @@ ART_summary:
         primitive_estimations: CactiDRAM
       - name: eyeriss_168_top_level.inter_PE_column_spatial[1..1]
         area: 1.0
-        primitive_estimations: dummy_table
+        primitive_estimations: dummy
       - name: eyeriss_168_top_level.inter_PE_spatial[1..14]
         area: 1.0
-        primitive_estimations: dummy_table
+        primitive_estimations: dummy
       - name: eyeriss_168_top_level.shared_glb[1..1]
-        area: 399033.2625
+        area: 399101.0
         primitive_estimations:
           - name: storage.storage
             estimator: CactiSRAM
           - name: storage.address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: metadata_storage.storage
             estimator: CactiSRAM
           - name: metadata_storage.address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: metadata_counters[0..1]
             estimator: Aladdin_table
       - name: eyeriss_168_top_level.ifmap_spad[1..168]
-        area: 151.772812
+        area: 2783.16
         primitive_estimations:
           - name: storage.storage[1..2048]
             estimator: Library
           - name: storage.comparator[1..64]
             estimator: Library
           - name: address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
       - name: eyeriss_168_top_level.weights_spad[1..168]
-        area: 14736.91
+        area: 51176.6
         primitive_estimations:
           - name: storage.storage[1..7168]
             estimator: Library
           - name: storage.comparator[1..224]
             estimator: Library
           - name: address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
       - name: eyeriss_168_top_level.psum_spad[1..168]
-        area: 14736.91
+        area: 51176.6
         primitive_estimations:
           - name: storage.storage[1..7168]
             estimator: Library
           - name: storage.comparator[1..224]
             estimator: Library
           - name: address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
       - name: eyeriss_168_top_level.mac[1..168]
-        area: 417.0
+        area: 931.598
         primitive_estimations:
           - name: intadder
             estimator: Library

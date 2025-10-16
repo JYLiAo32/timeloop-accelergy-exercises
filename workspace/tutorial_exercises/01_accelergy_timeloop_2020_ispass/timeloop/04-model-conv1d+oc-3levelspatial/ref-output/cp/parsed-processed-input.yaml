@@ -29,9 +29,33 @@ architecture:
                 power_gated_at: null
             required_actions:
               - update
+              - leak
               - read
               - write
+            enabled: true
+          - name: GlobalBuffer[1..1]
+            class: SRAM
+            attributes:
+                depth: 32768
+                width: 64
+                datawidth: 8
+                has_power_gating: false
+                n_banks: 2
+                cluster_size: 1
+                reduction_supported: true
+                multiple_buffering: 1
+                min_utilization: 0
+                allow_overbooking: false
+                meshX: 1
+                meshY: 1
+                technology: "40nm"
+                global_cycle_seconds: 1e-9
+                power_gated_at: null
+            required_actions:
+              - update
               - leak
+              - read
+              - write
             enabled: true
           - name: inter_PE_spatial[1..1]
             class: dummy_storage
@@ -51,30 +75,6 @@ architecture:
                 meshY: 1
                 global_cycle_seconds: 1e-9
                 power_gated_at: null
-            enabled: true
-          - name: GlobalBuffer[1..16]
-            class: SRAM
-            attributes:
-                depth: 32768
-                width: 64
-                datawidth: 8
-                has_power_gating: false
-                n_banks: 2
-                cluster_size: 1
-                reduction_supported: true
-                multiple_buffering: 1
-                min_utilization: 0
-                allow_overbooking: false
-                meshX: 16
-                meshY: 1
-                technology: "40nm"
-                global_cycle_seconds: 1e-9
-                power_gated_at: null
-            required_actions:
-              - update
-              - read
-              - write
-              - leak
             enabled: true
           - name: RegisterFile[1..16]
             class: regfile
@@ -96,9 +96,9 @@ architecture:
                 power_gated_at: null
             required_actions:
               - update
+              - leak
               - read
               - write
-              - leak
             enabled: true
           - name: MACC[1..16]
             class: intmac
@@ -157,6 +157,10 @@ mapping:
     type: temporal
     factors: R=1,P=1,K=1,C=1
     permutation: PRKC
+  - target: GlobalBuffer
+    type: temporal
+    factors: R=3,P=1,K=32,C=2
+    permutation: PRKC
   - type: spatial
     target: inter_PE_spatial
     factors: R=1,P=1,K=1,C=16
@@ -171,10 +175,6 @@ mapping:
       - Outputs
     type: bypass
     target: inter_PE_spatial
-  - target: GlobalBuffer
-    type: temporal
-    factors: R=3,P=1,K=32,C=2
-    permutation: PRKC
   - target: RegisterFile
     type: temporal
     factors: R=1,P=16,K=1,C=1

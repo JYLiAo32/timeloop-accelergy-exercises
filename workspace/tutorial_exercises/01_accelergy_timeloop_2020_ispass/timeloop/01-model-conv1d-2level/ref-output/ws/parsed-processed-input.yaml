@@ -2,7 +2,7 @@ dumped_by_timeloop_front_end: true
 architecture:
     version: '0.4'
     subtree:
-      - name: PE_top_level
+      - name: System_top_level
         attributes:
             version: '0.4'
             technology: "40nm"
@@ -30,9 +30,9 @@ architecture:
                 power_gated_at: null
             required_actions:
               - update
+              - leak
               - read
               - write
-              - leak
             enabled: true
           - name: Buffer[1..1]
             class: regfile
@@ -54,9 +54,9 @@ architecture:
                 power_gated_at: null
             required_actions:
               - update
+              - leak
               - read
               - write
-              - leak
             enabled: true
           - name: MACC[1..1]
             class: intmac

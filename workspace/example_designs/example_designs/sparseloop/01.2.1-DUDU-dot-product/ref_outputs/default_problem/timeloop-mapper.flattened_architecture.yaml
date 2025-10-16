@@ -27,11 +27,13 @@ architecture:
             cycle_seconds: 1e-09
             n_instances: 1
         required_actions:
-          - update
-          - write
           - leak
           - read
+          - write
+          - update
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: PE_top_level.mac[1..1]
         class: intmac
         attributes:
@@ -50,3 +52,5 @@ architecture:
         required_actions:
           - compute
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0

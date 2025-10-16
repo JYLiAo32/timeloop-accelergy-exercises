@@ -3,13 +3,13 @@ ERT_summary:
     table_summary:
       - name: System_top_level.DRAM[1..1]
         actions:
-          - name: read
-            energy: 512.0
-          - name: update
-            energy: 512.0
           - name: leak
             energy: 0.0
+          - name: read
+            energy: 512.0
           - name: write
+            energy: 512.0
+          - name: update
             energy: 512.0
         primitive_estimation(s):
           - name: System_top_level.DRAM[1..1]
@@ -17,120 +17,120 @@ ERT_summary:
       - name: System_top_level.GlobalBuffer[1..1]
         actions:
           - name: write
-            energy: 66.310888
+            energy: 66.2832
           - name: read
-            energy: 51.870888
+            energy: 51.8432
           - name: leak
-            energy: 0.003241
+            energy: 0.00166803
           - name: update
-            energy: 66.310888
+            energy: 66.2832
         primitive_estimation(s):
           - name: storage
             estimator: CactiSRAM
           - name: address_generators[0]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: address_generators[1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
       - name: System_top_level.PEInputBuffer[1..16]
         actions:
           - name: write
-            energy: 241.503552
+            energy: 305.505
           - name: read
-            energy: 242.079552
+            energy: 306.234
           - name: leak
-            energy: 0.207488
+            energy: 0.260167
           - name: update
-            energy: 241.503552
+            energy: 305.505
         primitive_estimation(s):
           - name: storage.storage[1..64]
             estimator: Library
           - name: storage.comparator[1..8192]
             estimator: Library
           - name: address_generators[0]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: address_generators[1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: storage.storage[1..524288]
             estimator: Library
           - name: address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
       - name: System_top_level.PEWeightBuffer[1..64]
         actions:
           - name: write
-            energy: 120.78787
+            energy: 152.775
           - name: read
-            energy: 121.36387
+            energy: 153.503
           - name: leak
-            energy: 0.104535
+            energy: 0.130088
           - name: update
-            energy: 120.78787
+            energy: 152.775
         primitive_estimation(s):
           - name: storage.storage[1..64]
             estimator: Library
           - name: storage.comparator[1..4096]
             estimator: Library
           - name: address_generators[0]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: address_generators[1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: storage.storage[1..262144]
             estimator: Library
           - name: address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
       - name: System_top_level.PEAccuBuffer[1..64]
         actions:
           - name: write
-            energy: 2.875058
+            energy: 3.60793
           - name: read
-            energy: 3.091057
+            energy: 3.88122
           - name: leak
-            energy: 0.003416
+            energy: 0.00305391
           - name: update
-            energy: 2.875058
+            energy: 3.60793
         primitive_estimation(s):
           - name: storage.storage[1..32]
             estimator: Library
           - name: storage.comparator[1..128]
             estimator: Library
           - name: address_generators[0]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: address_generators[1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: storage.storage[1..4096]
             estimator: Library
           - name: address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
       - name: System_top_level.PEWeightRegs[1..256]
         actions:
           - name: write
-            energy: 0.080139
+            energy: 0.0973879
           - name: read
-            energy: 0.259899
+            energy: 0.324827
           - name: leak
-            energy: 0.000169
+            energy: 3.24979e-05
           - name: update
-            energy: 0.080139
+            energy: 0.0973879
         primitive_estimation(s):
           - name: storage.storage[1..512]
             estimator: Library
           - name: storage.comparator[1..64]
             estimator: Library
           - name: address_generators[0]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: address_generators[1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
           - name: storage.storage[1..32768]
             estimator: Library
           - name: address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
       - name: System_top_level.mac[1..256]
         actions:
           - name: compute
-            energy: 0.315
+            energy: 1.13555
           - name: leak
-            energy: 0.0036
+            energy: 0.00784449
         primitive_estimation(s):
           - name: intadder
             estimator: Library

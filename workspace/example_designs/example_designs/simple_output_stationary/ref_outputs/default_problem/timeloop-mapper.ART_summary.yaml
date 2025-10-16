@@ -6,32 +6,32 @@ ART_summary:
         primitive_estimations: CactiDRAM
       - name: system_top_level.inter_PE_spatial[1..1]
         area: 1.0
-        primitive_estimations: dummy_table
+        primitive_estimations: dummy
       - name: system_top_level.weight_reg[1..256]
-        area: 95.68
+        area: 166.336
         primitive_estimations: Library
       - name: system_top_level.input_activation_reg[1..256]
-        area: 95.68
+        area: 166.336
         primitive_estimations: Library
       - name: system_top_level.output_activation_reg[1..256]
-        area: 95.68
+        area: 166.336
         primitive_estimations: Library
       - name: system_top_level.shared_glb[1..1]
-        area: 429745.625
+        area: 429752.0
         primitive_estimations:
           - name: storage
             estimator: CactiSRAM
           - name: address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
       - name: system_top_level.pe_spad[1..256]
-        area: 1419.815
+        area: 1423.39
         primitive_estimations:
           - name: storage
             estimator: CactiSRAM
           - name: address_generators[0..1]
-            estimator: Aladdin_table
+            estimator: Neurosim Plug-In
       - name: system_top_level.mac[1..256]
-        area: 417.0
+        area: 931.598
         primitive_estimations:
           - name: intadder
             estimator: Library

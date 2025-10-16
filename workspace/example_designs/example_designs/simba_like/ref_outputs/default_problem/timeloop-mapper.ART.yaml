@@ -10,14 +10,14 @@ ART:
       - name: System_top_level.inter_reg_mac_spatial[1..64]
         area: 1.0
       - name: System_top_level.GlobalBuffer[1..1]
-        area: 199065.0625
+        area: 199070.0
       - name: System_top_level.PEInputBuffer[1..16]
-        area: 3717019.6775
+        area: 6461790.0
       - name: System_top_level.PEWeightBuffer[1..64]
-        area: 1858571.37
+        area: 3230960.0
       - name: System_top_level.PEAccuBuffer[1..64]
-        area: 18948.654375
+        area: 43867.3
       - name: System_top_level.PEWeightRegs[1..256]
-        area: 49.12418
+        area: 5457.82
       - name: System_top_level.mac[1..256]
-        area: 417.0
+        area: 931.598

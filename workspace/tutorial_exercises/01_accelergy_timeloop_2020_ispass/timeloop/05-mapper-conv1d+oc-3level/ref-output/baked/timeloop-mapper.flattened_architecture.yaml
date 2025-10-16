@@ -24,10 +24,12 @@ architecture:
             n_instances: 1
         required_actions:
           - update
+          - leak
           - read
           - write
-          - leak
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.GlobalBuffer[1..1]
         class: SRAM
         attributes:
@@ -52,10 +54,12 @@ architecture:
             n_instances: 1
         required_actions:
           - update
+          - leak
           - read
           - write
-          - leak
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.RegisterFile[1..1]
         class: regfile
         attributes:
@@ -80,10 +84,12 @@ architecture:
             n_instances: 1
         required_actions:
           - update
+          - leak
           - read
           - write
-          - leak
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0
       - name: System_top_level.MACC[1..1]
         class: intmac
         attributes:
@@ -101,3 +107,5 @@ architecture:
         required_actions:
           - compute
         enabled: true
+        area_scale: 1.0
+        energy_scale: 1.0

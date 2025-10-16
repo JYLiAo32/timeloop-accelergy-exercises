@@ -29,10 +29,10 @@ architecture:
                 meshY: 1
                 power_gated_at: null
             required_actions:
-              - leak
-              - update
-              - write
               - read
+              - leak
+              - write
+              - update
             enabled: true
           - name: shared_glb[1..1]
             class: smartbuffer_SRAM
@@ -53,10 +53,10 @@ architecture:
                 meshY: 1
                 power_gated_at: null
             required_actions:
-              - leak
-              - update
-              - write
               - read
+              - leak
+              - write
+              - update
             enabled: true
           - name: inter_PE_column_spatial[1..1]
             class: dummy_storage
@@ -113,10 +113,10 @@ architecture:
                 meshY: 12
                 power_gated_at: null
             required_actions:
-              - leak
-              - update
-              - write
               - read
+              - leak
+              - write
+              - update
             enabled: true
           - name: weights_spad[1..168]
             class: smartbuffer_RF
@@ -137,10 +137,10 @@ architecture:
                 meshY: 12
                 power_gated_at: null
             required_actions:
-              - leak
-              - update
-              - write
               - read
+              - leak
+              - write
+              - update
             enabled: true
           - name: psum_spad[1..168]
             class: smartbuffer_RF
@@ -162,10 +162,10 @@ architecture:
                 meshY: 12
                 power_gated_at: null
             required_actions:
-              - leak
-              - update
-              - write
               - read
+              - leak
+              - write
+              - update
             enabled: true
           - name: mac[1..168]
             class: fpmac
@@ -240,8 +240,8 @@ architecture_constraints:
           - Weights
         type: bypass
         bypass:
-          - Inputs
           - Outputs
+          - Inputs
         target: weights_spad
       - permutation: NMPQSCR
         factors: N=1,M=1,P=1,Q=1,S=1
@@ -251,8 +251,8 @@ architecture_constraints:
           - Outputs
         type: bypass
         bypass:
-          - Inputs
           - Weights
+          - Inputs
         target: psum_spad
       - permutation: NCPQRSM
         factors: N=1,C=1,R=1,S=1,P=1,Q=1
@@ -418,8 +418,8 @@ compound_components:
             class: intadder
             attributes:
                 n_bits: max(1, ceil(log2(real_depth))) if real_depth >= 1 else 1
-                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 else
-                    1
+                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 
+                    else 1
                 global_cycle_seconds: global_cycle_seconds
         actions:
           - name: write
@@ -538,8 +538,8 @@ compound_components:
             class: intadder
             attributes:
                 n_bits: max(1, ceil(log2(real_depth))) if real_depth >= 1 else 1
-                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 else
-                    1
+                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 
+                    else 1
                 global_cycle_seconds: global_cycle_seconds
         actions:
           - name: write

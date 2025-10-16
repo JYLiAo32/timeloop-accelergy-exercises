@@ -8,12 +8,12 @@ ART:
       - name: eyeriss_168_top_level.inter_PE_spatial[1..14]
         area: 1.0
       - name: eyeriss_168_top_level.shared_glb[1..1]
-        area: 348892.5
+        area: 348955.0
       - name: eyeriss_168_top_level.ifmap_spad[1..168]
-        area: 171.058682
+        area: 2954.19
       - name: eyeriss_168_top_level.weights_spad[1..168]
-        area: 14736.91
+        area: 51176.6
       - name: eyeriss_168_top_level.psum_spad[1..168]
-        area: 600.798281
+        area: 5531.41
       - name: eyeriss_168_top_level.mac[1..168]
-        area: 417.0
+        area: 931.598

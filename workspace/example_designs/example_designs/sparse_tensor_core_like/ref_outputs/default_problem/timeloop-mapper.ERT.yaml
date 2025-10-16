@@ -3,11 +3,6 @@ ERT:
     tables:
       - name: system_top_level.DRAM[1..1]
         actions:
-          - name: update
-            arguments:
-                global_cycle_seconds: 1e-09
-                action_latency_cycles: 1
-            energy: 512.0
           - name: leak
             arguments:
                 global_cycle_seconds: 1e-09
@@ -23,29 +18,34 @@ ERT:
                 global_cycle_seconds: 1e-09
                 action_latency_cycles: 1
             energy: 512.0
+          - name: update
+            arguments:
+                global_cycle_seconds: 1e-09
+                action_latency_cycles: 1
+            energy: 512.0
       - name: system_top_level.SMEM[1..1]
         actions:
           - name: read
             arguments: {}
-            energy: 124.695312
+            energy: 124.663
           - name: write
             arguments: {}
-            energy: 118.118313
+            energy: 118.086
           - name: update
             arguments: {}
-            energy: 118.118313
+            energy: 118.086
           - name: metadata_read
             arguments: {}
-            energy: 25.954813
+            energy: 25.922
           - name: metadata_write
             arguments: {}
-            energy: 19.733913
+            energy: 19.7011
           - name: metadata_update
             arguments: {}
-            energy: 19.733913
+            energy: 19.7011
           - name: leak
             arguments: {}
-            energy: 0.01164
+            energy: 0.00792136
           - name: decompression_count
             arguments: {}
             energy: 0.0
@@ -56,39 +56,39 @@ ERT:
         actions:
           - name: write
             arguments: {}
-            energy: 15.160827
+            energy: 19.1353
           - name: read
             arguments: {}
-            energy: 15.232827
+            energy: 19.2264
           - name: leak
             arguments: {}
-            energy: 0.014432
+            energy: 0.016268
           - name: update
             arguments: {}
-            energy: 15.160827
+            energy: 19.1353
       - name: system_top_level.LRF[1..1024]
         actions:
           - name: read
             arguments: {}
-            energy: 0.019007
+            energy: 0.0167398
           - name: write
             arguments: {}
-            energy: 0.027041
+            energy: 0.0247739
           - name: update
             arguments: {}
-            energy: 0.027041
+            energy: 0.0247739
           - name: metadata_read
             arguments: {}
-            energy: 0.019007
+            energy: 0.0167398
           - name: metadata_write
             arguments: {}
-            energy: 0.027041
+            energy: 0.0247739
           - name: metadata_update
             arguments: {}
-            energy: 0.027041
+            energy: 0.0247739
           - name: leak
             arguments: {}
-            energy: 0.000288
+            energy: 1.5718e-06
           - name: decompression_count
             arguments: {}
             energy: 0.0
@@ -99,7 +99,7 @@ ERT:
         actions:
           - name: compute
             arguments: {}
-            energy: 0.315
+            energy: 1.13555
           - name: leak
             arguments: {}
-            energy: 0.0036
+            energy: 0.00784449

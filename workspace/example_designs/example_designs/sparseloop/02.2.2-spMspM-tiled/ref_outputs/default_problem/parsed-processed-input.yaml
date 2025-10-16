@@ -31,10 +31,10 @@ architecture:
                 technology: "45nm"
                 power_gated_at: null
             required_actions:
+              - leak
+              - read
               - write
               - update
-              - read
-              - leak
             enabled: true
           - name: Buffer[1..1]
             class: storage
@@ -60,10 +60,10 @@ architecture:
                 technology: "45nm"
                 power_gated_at: null
             required_actions:
+              - leak
+              - read
               - write
               - update
-              - read
-              - leak
             enabled: true
           - name: mac[1..1]
             class: intmac
@@ -143,7 +143,7 @@ compound_components:
             attributes:
                 width: adder_width
           - name: intmultiplier
-            class: aladdin_adder
+            class: aladdin_multiplier
             attributes:
                 width_a: multiplier_width
                 width_b: multiplier_width
@@ -460,8 +460,8 @@ compound_components:
             class: intadder
             attributes:
                 n_bits: max(1, ceil(log2(real_depth))) if real_depth >= 1 else 1
-                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 else
-                    1
+                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 
+                    else 1
                 width: max(1, ceil(log2(real_depth))) if real_depth >= 1 else 1
                 global_cycle_seconds: global_cycle_seconds
         actions:

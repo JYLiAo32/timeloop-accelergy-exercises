@@ -29,10 +29,10 @@ architecture:
                 technology: "45nm"
                 power_gated_at: null
             required_actions:
-              - read
-              - update
               - leak
+              - read
               - write
+              - update
             enabled: true
           - name: shared_glb[1..1]
             class: storage
@@ -61,10 +61,10 @@ architecture:
                 technology: "45nm"
                 power_gated_at: null
             required_actions:
-              - read
-              - update
               - leak
+              - read
               - write
+              - update
             enabled: true
           - name: inter_PE_column_spatial[1..1]
             class: dummy_storage
@@ -126,10 +126,10 @@ architecture:
                 technology: "45nm"
                 power_gated_at: null
             required_actions:
-              - read
-              - update
               - leak
+              - read
               - write
+              - update
             enabled: true
           - name: weights_spad[1..168]
             class: storage
@@ -152,10 +152,10 @@ architecture:
                 technology: "45nm"
                 power_gated_at: null
             required_actions:
-              - read
-              - update
               - leak
+              - read
               - write
+              - update
             enabled: true
           - name: psum_spad[1..168]
             class: storage
@@ -176,10 +176,10 @@ architecture:
                 technology: "45nm"
                 power_gated_at: null
             required_actions:
-              - read
-              - update
               - leak
+              - read
               - write
+              - update
             enabled: true
           - name: mac[1..168]
             class: intmac
@@ -259,8 +259,8 @@ architecture_constraints:
           - Outputs
         type: bypass
         bypass:
-          - Weights
           - Inputs
+          - Weights
         target: psum_spad
       - permutation: NCPQRSM
         factors: N=1,C=1,R=1,S=1,P=1,Q=1
@@ -358,7 +358,7 @@ compound_components:
             attributes:
                 width: adder_width
           - name: intmultiplier
-            class: aladdin_adder
+            class: aladdin_multiplier
             attributes:
                 width_a: multiplier_width
                 width_b: multiplier_width
@@ -675,8 +675,8 @@ compound_components:
             class: intadder
             attributes:
                 n_bits: max(1, ceil(log2(real_depth))) if real_depth >= 1 else 1
-                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 else
-                    1
+                precision: max(1, ceil(log2(real_depth))) if real_depth >= 1 
+                    else 1
                 width: max(1, ceil(log2(real_depth))) if real_depth >= 1 else 1
                 global_cycle_seconds: global_cycle_seconds
         actions:

@@ -5,25 +5,25 @@ ERT:
         actions:
           - name: read
             arguments: {}
-            energy: 2.290882
+            energy: 2.26827
           - name: write
             arguments: {}
-            energy: 2.694173
+            energy: 2.67156
           - name: update
             arguments: {}
-            energy: 2.694173
+            energy: 2.67156
           - name: metadata_read
             arguments: {}
-            energy: 0.373885
+            energy: 0.356362
           - name: metadata_write
             arguments: {}
-            energy: 0.726887
+            energy: 0.709364
           - name: metadata_update
             arguments: {}
-            energy: 0.726887
+            energy: 0.709364
           - name: leak
             arguments: {}
-            energy: 0.002378
+            energy: 8.98404e-05
           - name: decompression_count
             arguments: {}
             energy: 0.0
@@ -34,25 +34,25 @@ ERT:
         actions:
           - name: read
             arguments: {}
-            energy: 1.060977
+            energy: 1.31268
           - name: write
             arguments: {}
-            energy: 0.988977
+            energy: 1.22159
           - name: update
             arguments: {}
-            energy: 0.988977
+            energy: 1.22159
           - name: metadata_read
             arguments: {}
-            energy: 0.553457
+            energy: 0.670549
           - name: metadata_write
             arguments: {}
-            energy: 0.517458
+            energy: 0.625001
           - name: metadata_update
             arguments: {}
-            energy: 0.517458
+            energy: 0.625001
           - name: leak
             arguments: {}
-            energy: 0.003217
+            energy: 0.00153473
           - name: decompression_count
             arguments: {}
             energy: 0.0
@@ -63,7 +63,7 @@ ERT:
         actions:
           - name: compute
             arguments: {}
-            energy: 0.315
+            energy: 1.13555
           - name: leak
             arguments: {}
-            energy: 0.0036
+            energy: 0.00784449
