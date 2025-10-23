@@ -7,6 +7,8 @@ architecture:
       technology: "40nm"
       global_cycle_seconds: 1e-9
 
+  # NOTE: 这里没有使用 parallel, 是否意味着，MACC属于Buffer的子组件？
+  # 根据v2版本的描述，应该不算子组件？因为它没有嵌套subtree
   - !Component
     name: Buffer
     class: regfile

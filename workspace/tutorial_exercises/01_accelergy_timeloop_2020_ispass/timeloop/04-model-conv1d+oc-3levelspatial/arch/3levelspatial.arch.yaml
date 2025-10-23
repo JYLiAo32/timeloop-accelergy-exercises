@@ -14,6 +14,7 @@ architecture:
       width: 256
       datawidth: 8
 
+  # 这里定义和v2的不一致了，没有嵌套一个名为Chip的container
   - !Component
     name: GlobalBuffer
     class: SRAM
@@ -24,7 +25,7 @@ architecture:
 
   - !Container
     name: PE
-    spatial: {meshX: 16}
+    spatial: {meshX: 16}  # 注意对比v2版本的配置!
 
   - !Component
     name: RegisterFile

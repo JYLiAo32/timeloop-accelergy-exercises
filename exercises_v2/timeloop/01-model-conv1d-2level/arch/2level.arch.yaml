@@ -1,6 +1,5 @@
 architecture:
   version: 0.2
-  
   subtree:
   - name: System
     attributes:

@@ -13,6 +13,8 @@ architecture:
     attributes:
       width: 256
       datawidth: 8
+  
+  # 这里定义和v2的不一致了，没有嵌套一个名为Chip的container
 
   - !Component
     name: GlobalBuffer

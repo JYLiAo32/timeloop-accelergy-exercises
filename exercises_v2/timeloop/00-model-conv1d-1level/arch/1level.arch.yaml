@@ -1,21 +1,20 @@
 architecture:
   version: 0.2
-  
   subtree:
-  - name: PE
+  - name: PE  # 横线开始定义一个组件, 从name开始
     attributes:
       technology: 40nm
 
-    local:
+    local:  # local开始表示当前组件旗下的子组件  
     - name: Buffer
       class: regfile
       attributes:
         depth: 64
         width: 8
-        block-size: 1
-        word-bits: 8
+        block-size: 1  # 什么意思？
+        word-bits: 8  # 对应新版的datawidth?
 
-    - name: MACC
+    - name: MACC  # 同理
       class: intmac
       attributes:
         datawidth: 8

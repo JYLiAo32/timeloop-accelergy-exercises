@@ -15,6 +15,8 @@ architecture:
       width: 64
       datawidth: 8
 
+  # 这里定义和v2的不一致了，没有嵌套一个名为PE的container
+  # NOTE: 在下一个教程的配置就用到了PE
   - !Component
     name: Buffer
     # class: regfile

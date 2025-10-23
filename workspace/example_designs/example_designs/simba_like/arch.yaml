@@ -46,7 +46,7 @@ architecture:
 
   - !Container # Weight channels distributed across different buffers
     name: distributed_buffers
-    spatial: {meshY: 4}
+    spatial: {meshY: 4}  # NOTE: 存在并行！
     constraints:
       spatial: {factors: P=1 Q=1 R=1 S=1 C=1 N=1, permutation: [M, C, Q, R, S, P, N]}
 

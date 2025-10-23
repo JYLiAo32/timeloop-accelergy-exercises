@@ -100,7 +100,9 @@ architecture:
         temporal:
           permutation: [N, C, P, Q, R, S, M] 
           factors: [N=1, C=1, R=1, S=1, P=1, Q=1]
-
+  
+  # NOTE: 注意这里的改造方法！v2中MAC和前面三者处于同一个subtree
+  #   但是这里MAC独立出来，而前三者下属于!parallel分支
   - !Component # MAC unit
     name: mac
     class: intmac
