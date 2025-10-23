@@ -1,7 +1,8 @@
 mapper:
   version: 0.4
-  optimization_metric: [ delay, energy ]
-  num_threads: 1
+  # optimization_metric: [delay, energy]  # FIXME: 输出log报警：WARNING: no optimization metric(s) specified, using edp as default.
+  optimization_metrics: [delay, energy]  # FIXME: 参考这里说明，修改配置项名：https://timeloop.csail.mit.edu/v4/input-formats/mapper
+  num_threads: 1  # 如果不指定，则根据CPU核数自动分配  # FIXME: 数量为1，未搜到最佳解
   algorithm: linear_pruned
   victory_condition: 0
   timeout: 0

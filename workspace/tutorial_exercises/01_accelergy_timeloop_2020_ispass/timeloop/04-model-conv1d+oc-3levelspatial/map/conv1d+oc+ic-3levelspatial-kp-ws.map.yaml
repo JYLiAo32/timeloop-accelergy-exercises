@@ -1,21 +1,27 @@
 mapping:
   - target: MainMemory
     type: temporal
-    factors: R=1 P=1 K=1 C=1
+    factors: R=1 P=1 K=1 C=1 
     permutation: PRKC
     
+    # 一次性传入所有数据
+    # (C,K,R,P) = (32,32,3,16)
   - target: GlobalBuffer
     type: temporal
     factors: R=3 P=1 K=2 C=32
     permutation: PRKC
 
+    # (C,K,R,P) = (1,16,1,16)
+    # 依照README的描述，这里是将weight在K维度进行了拆分，在16个PE中并行
+    # multicast: 相应地，inputs则需要从globalBuffer复制16份到各个PE中
   - target: PE
     type: spatial
-    factors: R=1 P=1 K=16 C=1
+    factors: R=1 P=1 K=16 C=1  # 在K维度并行, 用完16个PE
     permutation: PRKC
     
+    # (C,K,R,P) = (1,1,1,16)
   - target: RegisterFile
     type: temporal
     factors: R=1 P=16 K=1 C=1
     permutation: RPKC
-    
+    # (C,K,R,P) = (1,1,1,1)

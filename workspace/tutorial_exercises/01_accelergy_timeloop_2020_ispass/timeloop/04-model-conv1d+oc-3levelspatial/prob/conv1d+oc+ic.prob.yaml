@@ -6,7 +6,7 @@ problem:
     data_spaces:
     - name: Weights
       projection:
-      - [ [C] ]
+      - [ [C] ]  # 三维权重
       - [ [K] ]
       - [ [R] ]
     - name: Inputs

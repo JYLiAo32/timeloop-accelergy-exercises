@@ -1,11 +1,11 @@
 mapping:
   - target: MainMemory
     type: temporal
-    factors: R=1 P=16 K=16
-    permutation: PRK
+    factors: R=1 P=16 K=16  # 在K维，分16轮读取(16块)，每轮读入32/16=2个元素
+    permutation: [P, R, K]
     
   - target: Buffer
     type: temporal
-    factors: R=3 P=1 K=2
-    permutation: RPK
+    factors: R=3 P=1 K=2  # 在K维，一次读入1两块
+    permutation: [R, P, K]
     

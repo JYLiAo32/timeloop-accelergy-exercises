@@ -10,7 +10,7 @@ architecture:
   - !Component
     name: MainMemory
     class: DRAM
-    attributes:
+    attributes:  # 相比前一版，没有设定depth属性，应该是相当于没有限制（容量无限制）
       width: 256
       datawidth: 8
 

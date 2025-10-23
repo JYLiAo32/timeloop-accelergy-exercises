@@ -17,14 +17,16 @@ architecture:
 
   - !Component
     name: Buffer
-    class: regfile
+    # class: regfile
+    class: SRAM  # 显著降低能耗
     attributes:
-      depth: 64
-      width: 8
-      datawidth: 8
+      depth: 4000  # 缓冲区深度  (至少是1920*2+1, 为什么要乘以2？大概是因为分别存储输入和输出？)
+      width: 8  # 缓冲区宽度
+      datawidth: 8  # 单个数据元素的位宽
 
   - !Component
     name: MACC
     class: intmac
     attributes:
-      width: 8
+      width: 8  # 操作数的位宽
+

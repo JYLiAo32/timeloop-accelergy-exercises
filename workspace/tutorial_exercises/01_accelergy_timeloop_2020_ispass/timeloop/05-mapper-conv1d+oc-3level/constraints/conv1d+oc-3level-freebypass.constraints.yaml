@@ -23,3 +23,7 @@ mapspace_constraints:
     factors: R=3 P=1 K=2
     permutation: RPK
     
+# 所有数据都需要通过RegisterFile? (all data_spaces originate in the last-level storage)
+# 因此只要mainmemory和globalbuffer可以进行bypass
+# (2*2) * (2*2) * (2*2) = 64
+# (mainmemory是否bypass, globalbuffer是否bypass) ^ 3(inputs, weights, outputs)

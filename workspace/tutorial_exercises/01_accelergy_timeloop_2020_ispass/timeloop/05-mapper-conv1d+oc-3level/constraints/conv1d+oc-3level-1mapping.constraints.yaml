@@ -9,8 +9,8 @@ mapspace_constraints:
   targets:
   - target: MainMemory
     type: temporal
-    factors: R=1 P=1 K=1
-    permutation: PRK
+    factors: R=1 P=1 K=1  # 在约束域中指定取值，应该就意味着确切的限定？
+    permutation: PRK  # 这也是一种限制，指定了循环顺序
       
   - target: GlobalBuffer
     type: temporal

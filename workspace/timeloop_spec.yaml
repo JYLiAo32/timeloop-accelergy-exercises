@@ -1121,7 +1121,7 @@ variables:                  # < Type = Variables,  Default = '{'version': 0.4}' 
   <Any>:    < Type = None,  Default = Optional >
 mapspace:                   # < Type = Mapspace,  Default = '{'version': 0.4}' >
   version:   < Type = None,  Default = '0.4' >
-  template:  < Type = str,  Default = 'uber' >
+  template:  < Type = str,  Default = 'uber' >  # 'ruby' 或 其它名字，ruby表示使用不完美分块映射空间
 globals:                    # < Type = Globals,  Default = '{'version': 0.4}' >
   version:                      < Type = None,  Default = '0.4' >
   environment_variables:        < Type = EnvironmentVariables,  Default = '[]' >

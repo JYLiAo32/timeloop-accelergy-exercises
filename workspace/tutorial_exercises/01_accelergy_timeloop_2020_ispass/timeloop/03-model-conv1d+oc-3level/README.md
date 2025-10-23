@@ -22,3 +22,6 @@ To run the exercise, type the following from the exercises/timeloop directory:
 4. Can you come up with a better bypassing strategy? What happens if you also change the other variables in the mapping, i.e., tiling factors and permutations? How do they interplay with bypassing options?
 
     If you find a better bypassing strategy than any of the provided mappings, hold on to it. In a later exercise, we will run Timeloop's automated _mapper_ on this very same problem and architecture. You can compare what you found vs. what the mapper found!
+
+
+### Best mapping strategy note

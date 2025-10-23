@@ -27,10 +27,10 @@ architecture:
     attributes:
       depth: 16384
       width: 64
-      n_banks: 32
+      n_banks: 32  # FIXME: 什么意思？
       datawidth: 8
-      read_bandwidth: 16
-      write_bandwidth: 16
+      read_bandwidth: 16  # FIXME: 什么意思？
+      write_bandwidth: 16  # FIXME: 什么意思？
     constraints:
       dataspace: {keep: [Inputs, Outputs], bypass: [Weights]}
 
@@ -38,14 +38,14 @@ architecture:
     name: PE_column
     spatial: {meshX: 14}
     constraints:
-      spatial:
-        permutation: [N, C, P, R, S, Q, M]
+      spatial:  # 并行计算的约束
+        permutation: [N, C, P, R, S, Q, M]  # 约束限定了空间映射的顺序
         factors: [N=1, C=1, P=1, R=1, S=1]
-        split: 7
+        split: 7  # FIXME: 什么意思？
 
   - !Container # Each PE in the column receives a different filter row
     name: PE
-    spatial: {meshY: 12}
+    spatial: {meshY: 12}  # NOTE: 并行数量累乘，实际为14*12=168个PE
     constraints:
       spatial:
         split: 4
@@ -54,6 +54,7 @@ architecture:
 
   - !Parallel # Input/Output/Weight scratchpads in parallel
     nodes:
+    # 每个PE有一个输入/输出/权重 scratchpad(寄存器)
     - !Component # Input scratchpad
       name: ifmap_spad
       class: smartbuffer_RF

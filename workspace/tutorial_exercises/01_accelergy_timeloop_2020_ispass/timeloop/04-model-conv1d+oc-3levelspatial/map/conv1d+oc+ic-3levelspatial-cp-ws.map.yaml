@@ -3,17 +3,25 @@ mapping:
     type: temporal
     factors: R=1 P=1 K=1 C=1
     permutation: PRKC
-    
+
+    # (C,K,R,P) = (32,32,3,16)    
   - target: GlobalBuffer
     type: temporal
     factors: R=3 P=1 K=32 C=2
     permutation: PRKC
 
+    # (C,K,R,P) = (16,1,1,16)
+    # 在C维度上并行
+    # 相比ws, 这里将inputs和weights都沿维度C进行拆分, 不存在多份复制
+    # 那么代价是什么呢？
+    #   需要进行spatially-reduced：每个PE上的计算结果都是partial sum，需要通过累加后再回传到GlobalBuffer
+    #   这个过程类似与ws的 multicast 的逆过程
   - target: PE
     type: spatial
     factors: R=1 P=1 K=1 C=16
     permutation: PRKC
     
+    # (C,K,R,P) = (1,1,1,16)
   - target: RegisterFile
     type: temporal
     factors: R=1 P=16 K=1 C=1

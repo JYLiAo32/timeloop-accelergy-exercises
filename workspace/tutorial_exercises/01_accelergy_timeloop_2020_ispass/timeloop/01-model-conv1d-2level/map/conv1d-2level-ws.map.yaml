@@ -1,11 +1,11 @@
 mapping:
   - target: MainMemory
-    type: temporal
-    factors: R=3 P=1
-    permutation: RP
+    type: temporal  # 串行的内存层级
+    factors: R=3 P=1  # 分块因子: R维度分成3块，P维度不分块
+    permutation: RP  # 这个是从内到外的循环顺序
     
   - target: Buffer
-    type: temporal
-    factors: R=1 P=16
+    type: temporal  # 需要理解，权重复用(stationary)是在时间先后上的重复利用。读取一次weight，在buffer里可以重复使用多次，即在16个cycle中复用，分别与16个input相乘
+    factors: R=1 P=1920  # 分块因子: R维度不分块，P维度分成16块
     permutation: PR
     
