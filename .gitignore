@@ -9,6 +9,42 @@
 
 # Application-specific ignores
 ## accelergy
+
+##fibertree
+notebooks/*.mp4
+
+#
+# Ignore shell files
+#
+**/.profile
+**/.bashrc
+**/.cache
+**/.workloads
+**/.config
+.ideas
+.local
+
+#
+# Ignore python-related files
+#
+**/__pycache__
+**/.ipynb_checkpoints
+**/.ipython
+**/.jupyter
+**/.python_history
+
+#
+# Keep some empty directories
+#
 !/**/.gitkeep
 
+#
+# docker
+#
+docker-compose.yaml
 
+.past_versions
+workspace/.bash_history
+timeloop-model*.yaml
+timeloop-model*.txt
+timeloop-model*.xml

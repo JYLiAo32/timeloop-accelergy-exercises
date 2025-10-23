@@ -1,0 +1,31 @@
+ERT_summary:
+    version: '0.4'
+    table_summary:
+      - name: PE_top_level.Buffer[1..1]
+        actions:
+          - name: write
+            energy: 2.38635
+          - name: read
+            energy: 2.47744
+          - name: leak
+            energy: 0.00203248
+          - name: update
+            energy: 2.38635
+        primitive_estimation(s):
+          - name: storage[1..8]
+            estimator: Library
+          - name: comparator[1..64]
+            estimator: Library
+          - name: storage[1..512]
+            estimator: Library
+      - name: PE_top_level.mac[1..1]
+        actions:
+          - name: compute
+            energy: 1.13555
+          - name: leak
+            energy: 0.00784449
+        primitive_estimation(s):
+          - name: intadder
+            estimator: Library
+          - name: intmultiplier
+            estimator: Library

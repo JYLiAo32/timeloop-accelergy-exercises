@@ -1,0 +1,32 @@
+architecture:
+  version: 0.4
+  nodes:
+  - !Container
+    name: System
+    attributes:
+      technology: "40nm"
+      global_cycle_seconds: 1e-9
+
+  - !Component
+    name: MainMemory
+    class: SRAM
+    attributes:
+      depth: 32768
+      width: 64
+      datawidth: 8
+
+  - !Component
+    name: Buffer
+    # class: regfile
+    class: SRAM  # 显著降低能耗
+    attributes:
+      depth: 4000  # 缓冲区深度  (至少是1920*2+1, 为什么要乘以2？大概是因为分别存储输入和输出？)
+      width: 8  # 缓冲区宽度
+      datawidth: 8  # 单个数据元素的位宽
+
+  - !Component
+    name: MACC
+    class: intmac
+    attributes:
+      width: 8  # 操作数的位宽
+

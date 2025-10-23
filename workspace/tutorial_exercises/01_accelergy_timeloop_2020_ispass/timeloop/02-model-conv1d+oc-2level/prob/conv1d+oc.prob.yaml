@@ -1,0 +1,23 @@
+problem:
+  version: 0.4
+  shape:
+    name: Conv1D_OC
+    dimensions: [ K, R, P ]
+    data_spaces:
+    - name: Weights
+      projection:
+      - [ [K] ]  # 两维，分别对应K、R
+      - [ [R] ]
+    - name: Inputs
+      projection:
+      - [ [R], [P] ]  # 一维，与R、P相关（实际上是R+P-1)
+    - name: Outputs
+      projection:
+      - [ [K] ]  # 两维，分别对应K、R
+      - [ [P] ]
+      read_write: True
+
+  instance:
+    K: 32
+    R: 3
+    P: 16

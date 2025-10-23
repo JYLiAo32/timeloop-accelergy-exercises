@@ -1,0 +1,59 @@
+problem:
+  version: 0.4
+  instance:
+    C: 128  # 输入通道数
+    Hdilation: 1
+    Hstride: 1
+    M: 256  # 输出通道数
+    N: 1  # 批处理大小
+    P: 56  # 输出宽度
+    Q: 56  # 输出高度
+    R: 3 # 卷积核宽度
+    S: 3 # 卷积核高度
+    Wdilation: 1
+    Wstride: 1
+  shape:
+    coefficients:   # 这里定义各类参数及其默认值？
+    - default: 1
+      name: Wstride
+    - default: 1
+      name: Hstride
+    - default: 1
+      name: Wdilation
+    - default: 1
+      name: Hdilation
+    data_spaces:
+    - name: Weights
+      projection:
+      - - - C
+      - - - M
+      - - - R
+      - - - S
+    - name: Inputs
+      projection:
+      - - - N
+      - - - C
+      - - - R  # FIXME: 这里的-数量不同，代表的含义是什么？
+          - Wdilation # 应该是描述参数之间的关系: 卷积核在宽度方向上的 dilation 因子
+        - - P  # R+P-1 组成Inputs的宽度维度
+          - Wstride  # 应该是描述参数之间的关系: 卷积核在宽度方向上的 stride 因子
+      - - - S  #  同理
+          - Hdilation
+        - - Q
+          - Hstride
+    - name: Outputs
+      projection:
+      - - - N
+      - - - M
+      - - - Q
+      - - - P
+      read_write: true
+    dimensions:
+    - C
+    - M
+    - R
+    - S
+    - N
+    - P
+    - Q
+    name: CNN_Layer

@@ -1,0 +1,25 @@
+ERT:
+    version: '0.4'
+    tables:
+      - name: PE_top_level.Buffer[1..1]
+        actions:
+          - name: write
+            arguments: {}
+            energy: 2.38635
+          - name: read
+            arguments: {}
+            energy: 2.47744
+          - name: leak
+            arguments: {}
+            energy: 0.00203248
+          - name: update
+            arguments: {}
+            energy: 2.38635
+      - name: PE_top_level.mac[1..1]
+        actions:
+          - name: compute
+            arguments: {}
+            energy: 1.13555
+          - name: leak
+            arguments: {}
+            energy: 0.00784449
